@@ -2,21 +2,9 @@ from tools.check_balance import is_balanced
 
 
 if __name__ == '__main__':
-    balanced_rows = [
-        "(((([{}]))))", 
-        "[([])((([[[]]])))]{()}", 
-        "{{[()]}}"
-    ]
+    user_input = input("Enter a sequence of parentheses to check: ")
     
-    unbalanced_rows = [
-        "}{}",
-        "{{[(])]}}",
-        "[[{())}]"
-    ]
+    result = is_balanced(user_input)
     
-    for row in balanced_rows:
-        assert is_balanced(row) == "Сбалансированно"
-
-    for row in unbalanced_rows:
-        assert is_balanced(row) == "Несбалансированно"
+    print(result)
 
